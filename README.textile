@@ -1,0 +1,48 @@
+h1. What this plugin does
+
+It automatically sets a wiki page's parent page based on its name.
+
+For example:
+* "*HowTo>ManageYourTeam*" will set its parent page to "!HowTo".
+* "*HowTo>ManageYourTeam>TheHardWay" will set its parent page to "HowTo>ManageYourTeam".
+
+Benefits:
+* You don't have to select a parent page from a long drop-down list.
+* A page's path of parent pages shows up in the URL.
+* Very easy to create a child page for the wiki page you're on. Just add ">NewChild" to your current URL.
+* You now know to go straight to "Rename" to change its parent page -- which is not very intuitive.
+
+
+h1. Installation
+
+script/plugin install git://github.com/merikonjatta/redmine_autohier.git
+
+Or, you could download the zip file and extract its contents to *redmine_dir/vendor/plugins*.
+
+Restart your redmine app.
+
+
+h1. Usage
+
+Use '>' in your page title to set its path.
+
+
+h2. Moving whole trees
+
+Once you rename a wiki page that have child pages, all of them will be renamed accordingly.
+
+Example: Say you have a page named "*!PlannedTrips>Japan*" which has a whole lot of child pages like 
+ * "!PlannedTrips>Japan>Hotels"
+ * "!PlannedTrips>Japan>Transportation"
+and so on.
+
+Renaming "*!PlannedTrips>Japan*" to "*!PastTrips>Japan*" will rename all of its child pages accordingly, resulting in
+ * "!PastTrips>Japan"
+ * "!PastTrips>Japan>Hotels"
+ * "!PastTrips>Japan>Transportation"
+
+
+h2. Redirections
+
+Redmine has an option to set redirections when you change a wiki page's name.
+This options is applied to all child pages when you move a whole tree.
