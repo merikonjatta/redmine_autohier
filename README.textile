@@ -32,13 +32,13 @@ h2. Moving whole trees
 Once you rename a wiki page that have child pages, all of them will be renamed accordingly.
 
 Example: Say you have
- * "!PlannedTrips>Japan"
- * "!PlannedTrips>Japan>Hotels"
- * "!PlannedTrips>Japan>Transportation"
-and so on. Rename "*!PlannedTrips>Japan*" to "*!PastTrips>Japan*" and you get
- * "!PastTrips>Japan"
- * "!PastTrips>Japan>Hotels"
- * "!PastTrips>Japan>Transportation"
+ * "PlannedTrips>Japan"
+ * "PlannedTrips>Japan>Hotels"
+ * "PlannedTrips>Japan>Transportation"
+and so on. Rename "*PlannedTrips>Japan*" to "*PastTrips>Japan*" and you get
+ * "PastTrips>Japan"
+ * "PastTrips>Japan>Hotels"
+ * "PastTrips>Japan>Transportation"
 
 
 h2. Redirections
