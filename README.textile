@@ -35,6 +35,7 @@ Example: Say you have
  * "PlannedTrips>Japan"
  * "PlannedTrips>Japan>Hotels"
  * "PlannedTrips>Japan>Transportation"
+
 and so on. Rename "*PlannedTrips>Japan*" to "*PastTrips>Japan*" and you get
  * "PastTrips>Japan"
  * "PastTrips>Japan>Hotels"
