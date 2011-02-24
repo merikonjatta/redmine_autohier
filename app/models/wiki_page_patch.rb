@@ -41,6 +41,7 @@ module WikiPagePatch
       if !@old_title.blank? && (@old_title != title) && !new_record?
         descendants = self.wiki.pages.find(:all, :conditions=>["title LIKE ?", "#{@old_title}>%"])
         descendants.each do |d|
+          d.redirect_existing_links = self.redirect_existing_links
           d.title = d.title.gsub(/^#{@old_title}\>(.*)$/, "#{self.title}>\\1")
           d.save
         end
