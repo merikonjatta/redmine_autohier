@@ -1,6 +1,8 @@
 require 'redmine'
+
+
+# Apply the wiki page patch
 require 'wiki_page_patch'
-require 'wiki_patch'
 
 Redmine::Plugin.register :redmine_automatic_hierarchy do
   name 'Redmine Automatic Hierarchy plugin'

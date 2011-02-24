@@ -15,9 +15,9 @@ module ApplicationHelperAutoHierPatch
   
   module InstanceMethods  
     
-    # {{child_pages}}などで使われるrender_page_hierarchyを置き換え
-    # オリジナルのものではページ名が全て出てしまうので、
-    # パス相当の部分を取り除いてファイル名相当の部分だけ出力する。
+    # Replacing the method render_page_hierarchy, which is
+    # used for {{child_pages}} etc.
+    # This version uses page.short_title instead of page.pretty_title
     def render_page_hierarchy_with_autohier(pages, node=nil)
       content = ''
       if pages[node]
@@ -34,10 +34,10 @@ module ApplicationHelperAutoHierPatch
       content
     end
 
-    # Breadcrumb表示を調整
+    # Our version of Breadcrumbs
     def breadcrumb_with_autohier(*args)
       elements = args.flatten
-      elements.any? ? content_tag('p', args.join('&gt;'), :class=>'breadcrumb') : nil
+      elements.any? ? content_tag('p', args.join('&gt;')+" &#187;", :class=>'breadcrumb') : nil
     end
   end
 end
