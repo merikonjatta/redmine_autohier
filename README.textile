@@ -16,10 +16,10 @@ Benefits:
 h1. Installation
 
 @script/plugin install git://github.com/merikonjatta/redmine_autohier.git@
-
 Or, you could download the zip file and extract its contents to *redmine_dir/vendor/plugins*.
-
 Restart your redmine app.
+
+Currently known to work in Redmine 1.1.1.
 
 
 h1. Usage
