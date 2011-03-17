@@ -37,7 +37,7 @@ module ApplicationHelperAutoHierPatch
     # Our version of Breadcrumbs
     def breadcrumb_with_autohier(*args)
       elements = args.flatten
-      elements.any? ? content_tag('p', args.join('&gt;')+" &#187;", :class=>'breadcrumb') : nil
+      elements.any? ? content_tag('p', args.join('&gt;')+'&gt;'+@page.short_title, :class=>'breadcrumb') : nil
     end
   end
 end
