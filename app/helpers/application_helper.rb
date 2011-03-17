@@ -18,14 +18,14 @@ module ApplicationHelperAutoHierPatch
     # Replacing the method render_page_hierarchy, which is
     # used for {{child_pages}} etc.
     # This version uses page.short_title instead of page.pretty_title
-    def render_page_hierarchy_with_autohier(pages, node=nil)
+    def render_page_hierarchy_with_autohier(pages, node=nil, options={})
       content = ''
       if pages[node]
         content << "<ul class=\"pages-hierarchy\">\n"
         pages[node].each do |page|
           content << "<li>"
           content << link_to(h(page.short_title), {:controller => 'wiki', :action => 'show', :project_id => page.project, :id => page.title},
-                             :title => (page.respond_to?(:updated_on) ? l(:label_updated_time, distance_of_time_in_words(Time.now, page.updated_on)) : nil))
+                             :title => (options[:timestamp] && page.respond_to?(:updated_on) ? l(:label_updated_time, distance_of_time_in_words(Time.now, page.updated_on)) : nil))
           content << "\n" + render_page_hierarchy(pages, page.id) if pages[page.id]
           content << "</li>\n"
         end
