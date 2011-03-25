@@ -10,5 +10,5 @@ Redmine::Plugin.register :redmine_automatic_hierarchy do
 Replaces Redmine's wiki hierarchy features with a more transparent one.
 https://github.com/merikonjatta/redmine_autohier
 HERE
-  version '0.0.3'
+  version '0.0.4'
 end
