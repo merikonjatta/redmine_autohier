@@ -36,6 +36,10 @@ module ApplicationHelperAutoHierPatch
 
     # Our version of Breadcrumbs
     def breadcrumb_with_autohier(*args)
+      # This method only deals with wiki pages; send the rest to the old method.
+      if not @page then
+        return breadcrumb_without_autohier args 
+      end
       elements = args.flatten
       elements.any? ? content_tag('p', args.join('&gt;')+'&gt;'+@page.short_title, :class=>'breadcrumb') : nil
     end
